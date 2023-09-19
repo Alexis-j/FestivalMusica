@@ -1,0 +1,26 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "proyecto con Gulp SASS html",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexis-j/FestivalMusica.git"
+  },
+  "keywords": [
+    "Gulp",
+    "SASS"
+  ],
+  "author": "Alexis Jimenez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexis-j/FestivalMusica/issues"
+  },
+  "homepage": "https://github.com/Alexis-j/FestivalMusica#readme",
+  "devDependencies": {
+    "sass": "^1.67.0"
+  }
+}
