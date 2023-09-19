@@ -1,3 +1,8 @@
-body {
-  background-color: black;
+header {
+  color: blue;
+}
+
+h1 {
+  color: green;
+  text-transform: uppercase;
 }
