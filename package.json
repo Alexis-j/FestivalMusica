@@ -7,7 +7,6 @@
     "sass": "sass --watch src/scss:build/css",
     "tarea": "gulp tarea",
     "dev": "gulp dev"
-
   },
   "repository": {
     "type": "git",
@@ -25,7 +24,11 @@
   "homepage": "https://github.com/Alexis-j/FestivalMusica#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "sass": "^1.67.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

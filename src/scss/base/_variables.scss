@@ -3,9 +3,12 @@ $fuente_principal: 'Monserrat', sans-serif;
 
 /// colores
 $blanco: #ffffff;
-$cremalight: #F1EFEF;
-$crema: #CCC8AA;
-$gris: #7D7C7C;
-$osuro: #191717;
-$black: #000000;
+$verde: #4cbbb3;
+$rosa: #f53756;
+$amarillo: #fef46d;
+$morado: #752f97;
+$negro: #000000;
 
+body{
+  background-color: $verde;
+}
