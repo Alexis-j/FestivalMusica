@@ -480,3 +480,76 @@ img {
   color: #A39D37;
   font-weight: 700;
 }
+
+.lineup {
+  background-color: #000000;
+  padding: 5rem 0;
+}
+.lineup h3, .lineup p {
+  text-align: center;
+  color: #ffffff;
+}
+.lineup .dia {
+  text-transform: uppercase;
+  margin-bottom: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .escenarios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+.escenarios-contenedor p {
+  color: #ffffff;
+}
+
+.nombre-escenario {
+  padding-top: 2rem;
+}
+.nombre-escenario p:after {
+  content: "";
+  display: block;
+  width: 20rem;
+  height: 10rem;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 2rem auto 0 auto;
+}
+
+.edm .nombre-escenario:after {
+  background-image: url(../../../build/img/icono_edm.png);
+}
+
+.rock .nombre-escenario:after {
+  background-image: url(../../../build/img/icono_rock.png);
+}
+
+.calendario {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendario span {
+  font-weight: 400;
+}
+
+.bg-amarillo {
+  background-color: #A39D37;
+}
+.bg-amarillo li:nth-child(odd) {
+  background-color: #6a6624;
+}
+
+.bg-verde {
+  background-color: #445D48;
+}
+.bg-verde li:nth-child(odd) {
+  background-color: #2e4031;
+}
