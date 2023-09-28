@@ -1,9 +1,7 @@
 const {src, dest, watch, parallel } = require("gulp");
-
 //CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
-
 
 //Imagenes
 const cache = require('gulp-cache');
@@ -21,7 +19,6 @@ function css(done) {
 }
 
 function versionWebp (done) {
-
   const opciones = {
     quality:50
   };
@@ -55,15 +52,25 @@ function imagenes(done) {
   .pipe(dest('build/img'))
   done();
 }
+
+function javascript(done) {
+  src('src/js/**/*.js')
+    .pipe(dest('build/js'))
+
+  done();
+}
 function dev(done) {
   watch('src/scss/**/*.scss', css)
+  watch('src/javascript/**/*.js', javascript)
+
 
   done();
 }
 
 
 exports.css = css;
+exports.js = javascript;
 exports.imagenes = imagenes
 exports.versionWebp = versionWebp;
 exports.versionavif = versionavif;
-exports.dev = parallel (imagenes, versionWebp, versionavif, dev);
+exports.dev = parallel (imagenes, versionWebp, versionavif, javascript, dev);
