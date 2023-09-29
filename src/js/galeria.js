@@ -37,7 +37,12 @@ function mostrarImagen(id) {
       const overlay = document.createElement('DIV');
       overlay.appendChild(imagen);
       overlay.classList.add('overlay');
-      
+      overlay.onclick = function () {
+        const body = document.querySelector('body');
+        body.classList.remove('fijar-body');// hace que se puede haces scroll despues de el overlay
+        overlay.remove();
+      }
+
 
 
       //boton para cerar el modal
@@ -45,9 +50,8 @@ function mostrarImagen(id) {
       cerrarModal.textContent = 'X';
       cerrarModal.classList.add('btn-cerrar');
       cerrarModal.onclick = function () {
-        body.appendChild(overlay);
+        const body = document.querySelector('body');
         body.classList.remove('fijar-body');// hace que se puede haces scroll despues de el overlay
-
         overlay.remove();
       }
       overlay.appendChild(cerrarModal);
