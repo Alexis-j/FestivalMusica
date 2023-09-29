@@ -32,11 +32,30 @@ function mostrarImagen(id) {
       <source srcset="build/img/grande/${id}.webp" type="image/webp">
       <img loading="lazy" width="200" height="300"="build/img/grande/${id}.avif" alt="Imagen Galeria">
       `;
+
+      // crea el Overlay con la imagen
       const overlay = document.createElement('DIV');
       overlay.appendChild(imagen);
       overlay.classList.add('overlay');
+      
 
+
+      //boton para cerar el modal
+      const cerrarModal = document.createElement('P');
+      cerrarModal.textContent = 'X';
+      cerrarModal.classList.add('btn-cerrar');
+      cerrarModal.onclick = function () {
+        body.appendChild(overlay);
+        body.classList.remove('fijar-body');// hace que se puede haces scroll despues de el overlay
+
+        overlay.remove();
+      }
+      overlay.appendChild(cerrarModal);
+
+
+      // Anadir al HTML
       const body = document.querySelector('body');
       body.appendChild(overlay);
+      body.classList.add('fijar-body');
 
 }
