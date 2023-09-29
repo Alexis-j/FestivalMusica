@@ -485,7 +485,6 @@ img {
 }
 
 .lineup {
-  background-color: #000000;
   padding: 5rem 0;
 }
 .lineup h3, .lineup p {
@@ -555,6 +554,10 @@ img {
 }
 .bg-verde li:nth-child(odd) {
   background-color: #2e4031;
+}
+
+.bg-negro {
+  background-color: #FDE5D4;
 }
 
 .galeria {

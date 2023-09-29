@@ -2,7 +2,6 @@
 @use 'base/mixins' as m;
 
 .lineup{
-  background-color: v.$negro;
   padding: 5rem 0;
 
     h3, p {
@@ -70,4 +69,8 @@
   li:nth-child(odd){
     background-color: darken(v.$verde, 10%);
   }
+}
+
+.bg-negro{
+  background-color: v.$rosa;
 }
