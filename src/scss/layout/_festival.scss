@@ -2,7 +2,7 @@
 @use 'base/variables' as v;
 
 .sobre-festival{
-  margin: 5rem 0;
+  padding: 5rem 0 ;
   @include m.tablet {
     @include m.grid(2, 5rem)
   }
