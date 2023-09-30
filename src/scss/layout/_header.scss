@@ -5,9 +5,14 @@
   background-color: v.$negro;
   @include m.tablet {
     &.fijo{
+      top: 0;
+      left: 0;
       position: fixed;
       width: 100%;
       box-shadow: .1rem .2rem .1rem #333;
+    }
+    &.body-scroll{
+      padding-top: 8.6rem;
     }
   }
   h1{
