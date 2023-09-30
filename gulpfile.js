@@ -13,6 +13,10 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 
+
+//javascript
+const terser =  require('gulp-terser-js');
+
 function css(done) {
   src('src/scss/**/*.scss')//identificar archivo de sass
   .pipe(sourcesmaps.init())
@@ -62,7 +66,10 @@ function imagenes(done) {
 
 function javascript(done) {
   src('src/js/**/*.js')
-    .pipe(dest('build/js'))
+    .pipe(sourcesmaps.init())
+    .pipe(terser())
+    .pipe(sourcesmaps.write('.'))
+    .pipe(dest('build/js'));
 
   done();
 }
@@ -81,4 +88,3 @@ exports.imagenes = imagenes
 exports.versionWebp = versionWebp;
 exports.versionavif = versionavif;
 exports.dev = parallel (imagenes, versionWebp, versionavif, javascript, dev);
-
