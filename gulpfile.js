@@ -1,4 +1,4 @@
-const {src, dest, watch, parallel, series } = require("gulp");
+const {src, dest, watch, parallel, } = require("gulp");
 //CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
@@ -81,12 +81,6 @@ function dev(done) {
   done();
 }
 
-function build(done) {
-  return series(css, imagenes, javascript, function moveFiles() {
-    return src(['build/**/*', '!build/img', '!build/img/**/*'])
-      .pipe(dest('dist'));
-  })(done);
-}
 
 
 exports.css = css;
