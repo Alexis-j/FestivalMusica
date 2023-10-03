@@ -1,4 +1,4 @@
-const {src, dest, watch, parallel } = require("gulp");
+const {src, dest, watch, parallel, series } = require("gulp");
 //CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
@@ -70,9 +70,9 @@ function javascript(done) {
     .pipe(terser())
     .pipe(sourcesmaps.write('.'))
     .pipe(dest('build/js'));
-
   done();
 }
+
 function dev(done) {
   watch('src/scss/**/*.scss', css)
   watch('src/javascript/**/*.js', javascript)
@@ -81,10 +81,14 @@ function dev(done) {
   done();
 }
 
+function build(done) {
+  return series(css, imagenes, javascript)(done);
+}
 
 exports.css = css;
 exports.js = javascript;
-exports.imagenes = imagenes
+exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionavif = versionavif;
-exports.dev = parallel (imagenes, versionWebp, versionavif, javascript, dev);
+exports.dev = parallel(imagenes, versionWebp, versionavif, javascript, dev);
+exports.build = build;
