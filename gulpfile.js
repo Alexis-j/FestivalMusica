@@ -82,8 +82,12 @@ function dev(done) {
 }
 
 function build(done) {
-  return series(css, imagenes, javascript)(done);
+  return series(css, imagenes, javascript, function moveFiles() {
+    return src(['build/**/*', '!build/img', '!build/img/**/*'])
+      .pipe(dest('dist'));
+  })(done);
 }
+
 
 exports.css = css;
 exports.js = javascript;
